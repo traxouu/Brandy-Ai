@@ -102,7 +102,7 @@ export default function HomePage() {
             </div>
 
             <div className="grid gap-px bg-[var(--color-line)] sm:grid-cols-3">
-              <div className="bg-[#fffdfa] p-6">
+              <div className="bg-[var(--color-surface)] p-6">
                 <p className="label">Palette</p>
                 <div className="mt-4 flex gap-2">
                   {["#A51C30", "#161A1D", "#FFF6EC", "#C9A227", "#6B7278"].map((hex) => (
@@ -119,7 +119,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="bg-[#fffdfa] p-6">
+              <div className="bg-[var(--color-surface)] p-6">
                 <p className="label">Typographies</p>
                 <p className="font-logo mt-4 text-3xl leading-none">Sentient</p>
                 <p className="mt-1 text-xs text-[var(--color-ink-muted)]">Logo — 400</p>
@@ -136,7 +136,7 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div className="bg-[#fffdfa] p-6">
+              <div className="bg-[var(--color-surface)] p-6">
                 <p className="label">Positionnement</p>
                 <p className="mt-4 text-[0.95rem] leading-relaxed text-[var(--color-ink-soft)]">
                   «&nbsp;Pour les hôtes qui reçoivent souvent et mal équipés, Maison Vermeil
@@ -160,7 +160,7 @@ export default function HomePage() {
 
           <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-[var(--color-line)] bg-[var(--color-line)] sm:grid-cols-2 lg:grid-cols-4">
             {STEPS.map((s) => (
-              <div key={s.step} className="bg-[#fffdfa] p-7">
+              <div key={s.step} className="bg-[var(--color-surface)] p-7">
                 <p className="font-logo text-4xl text-[var(--color-brand)]">{s.step}</p>
                 <h3 className="mt-4 text-lg">{s.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink-soft)]">

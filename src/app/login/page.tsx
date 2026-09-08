@@ -11,8 +11,8 @@ export default async function LoginPage() {
 
   return (
     <main className="relative z-10 mx-auto flex min-h-screen max-w-md flex-col justify-center px-6 py-16">
-      <Link href="/" className="mb-10 text-center text-3xl">
-        <Logo />
+      <Link href="/" className="mb-10 flex justify-center" aria-label="Brandy AI, accueil">
+        <Logo className="h-9 text-[var(--color-brand)]" />
       </Link>
       <div className="card p-8">
         <h1 className="text-3xl">Content de vous revoir.</h1>

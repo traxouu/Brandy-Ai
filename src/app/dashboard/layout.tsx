@@ -20,8 +20,8 @@ export default async function DashboardLayout({
       <header className="no-print border-b border-[var(--color-line)] bg-[var(--color-cream)]/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4">
           <div className="flex items-center gap-6">
-            <Link href="/dashboard" className="text-xl">
-              <Logo />
+            <Link href="/dashboard" aria-label="Brandy AI, tableau de bord">
+              <Logo className="h-6 text-[var(--color-brand)]" />
             </Link>
             <nav className="flex items-center gap-5 text-sm font-medium">
               <Link href="/dashboard" className="hover:text-[var(--color-brand)]">

@@ -80,7 +80,7 @@ export default function ExportMenu({
             onClick={() => setOpen(false)}
             aria-label="Fermer le menu d'export"
           />
-          <div className="absolute right-0 z-20 mt-2 w-60 overflow-hidden rounded-xl border border-[var(--color-line)] bg-[#fffdfa] shadow-lg">
+          <div className="absolute right-0 z-20 mt-2 w-60 overflow-hidden rounded-xl border border-[var(--color-line)] bg-[var(--color-surface)] shadow-lg">
             {actions.map((action) => (
               <button
                 key={action.label}

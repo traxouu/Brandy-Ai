@@ -8,8 +8,8 @@ export default async function SiteHeader() {
   return (
     <header className="relative z-10">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-        <Link href="/" className="text-2xl">
-          <Logo />
+        <Link href="/" aria-label="Brandy AI, accueil">
+          <Logo className="h-7 text-[var(--color-brand)]" />
         </Link>
 
         <nav className="flex items-center gap-6 text-sm font-medium">

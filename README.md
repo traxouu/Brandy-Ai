@@ -135,14 +135,44 @@ consommer de crédits.
 
 ## Design system
 
-| Rôle | Valeur |
-|---|---|
-| Couleur principale | `#A51C30` |
-| Couleur secondaire | `#FFF6EC` |
-| Couleur tertiaire | `#161A1D` |
-| Logo | Sentient, serif |
-| H1 | Switzer, sans-serif |
-| P, H2, H3 | Satoshi, sans-serif |
+### Logo
 
-Les polices viennent de Fontshare ; les tokens sont déclarés dans
+Le nom entier en couleur principale, Sentient regular, traitement minimal. Les
+logos sont **vectorisés depuis les glyphes réels** : aucun `<text>`, donc aucun
+risque de rendu différent si la police n'est pas chargée.
+
+Le kit complet — wordmark, variantes fond sombre et monochrome, monogramme,
+favicon, image sociale — est dans [`public/brand/`](public/brand/README.md),
+avec ses règles d'usage.
+
+### Palette
+
+| Jeton | Hex | Rôle |
+|---|---|---|
+| `--color-brand` | `#A51C30` | Couleur principale. Accents, boutons, liens, chiffres. |
+| `--color-cream` | `#FFF6EC` | Couleur secondaire. Fond de toutes les pages claires. |
+| `--color-ink` | `#161A1D` | Couleur tertiaire. Titres et texte courant. |
+| `--color-brand-dark` | `#871324` | Survol et appui des boutons bordeaux. |
+| `--color-brand-light` | `#DA5F71` | Bordeaux lisible sur fond encre (sections sombres). |
+| `--color-brand-soft` | `#F5E3E5` | Fond des messages d'erreur et des états d'alerte. |
+| `--color-cream-deep` | `#F7EADC` | Fond secondaire, jauges, aplats de repos. |
+| `--color-line` | `#EADCCB` | Filets, bordures de cartes et de champs. |
+| `--color-ink-soft` | `#383F45` | Texte courant secondaire, paragraphes longs. |
+| `--color-ink-muted` | `#5F676D` | Légendes, métadonnées, texte tertiaire. |
+| `--color-surface` | `#FFFDFA` | Fond des cartes, légèrement au-dessus du crème. |
+
+Chaque couple texte/fond employé dans le produit passe au moins AA (4,5:1).
+Un piège à retenir : **#A51C30 sur #161A1D ne donne que 2,34:1** — sur fond
+encre, utiliser `--color-brand-light` (#DA5F71). `scripts/palette.py` rejoue
+toute la vérification.
+
+### Typographies
+
+| Rôle | Police | Graisse |
+|---|---|---|
+| Logo | Sentient | 400 |
+| H1 | Switzer | 700 |
+| P, H2, H3 | Satoshi | 400 / 700 |
+
+Les polices viennent de Fontshare ; les jetons sont déclarés dans
 `src/app/globals.css` sous `@theme` (Tailwind v4).
