@@ -33,7 +33,8 @@ export default function HomePage() {
       <main className="relative z-10">
         {/* Hero */}
         <section className="mx-auto max-w-6xl px-6 pb-24 pt-16 sm:pt-24">
-          <p className="mb-7 inline-flex items-center gap-2 rounded-full border border-[var(--color-filet)] bg-[var(--color-surface)] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-[var(--color-violet)]">
+          <p className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-[var(--color-filet)] bg-[var(--color-surface)] py-1.5 pl-3 pr-4 text-xs font-bold uppercase tracking-[0.14em] text-[var(--color-violet)]">
+            <LogoMark className="h-3.5 text-[var(--color-rouge)]" />
             Qualification des leads entrants
           </p>
 
@@ -69,7 +70,8 @@ export default function HomePage() {
               <span className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--color-encre-tenue)]">
                 Un lead tel qu&apos;il vous arrive
               </span>
-              <span className="rounded-full bg-[var(--color-violet)] px-3 py-1 text-xs font-bold text-[var(--color-ivoire)]">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-rouge-fonce)] px-3 py-1 text-xs font-bold text-[var(--color-ivoire)]">
+                <LogoMark className="h-3 text-[var(--color-ivoire)]" />
                 Score 87
               </span>
             </div>
@@ -97,7 +99,7 @@ export default function HomePage() {
           <div className="mx-auto grid max-w-6xl gap-px bg-[var(--color-filet)] px-0 sm:grid-cols-3">
             {PROOF.map((p) => (
               <div key={p.label} className="bg-[var(--color-ivoire-creuse)] px-6 py-10">
-                <p className="font-display-face text-4xl text-[var(--color-violet)]">
+                <p className="font-display-face text-4xl text-[var(--color-rouge-fonce)]">
                   {p.value}
                 </p>
                 <p className="mt-2 text-sm text-[var(--color-encre-douce)]">{p.label}</p>
@@ -117,7 +119,13 @@ export default function HomePage() {
           <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-[var(--color-filet)] bg-[var(--color-filet)] md:grid-cols-3">
             {STEPS.map((s, i) => (
               <div key={s.title} className="bg-[var(--color-surface)] p-8">
-                <p className="font-display-face text-3xl text-[var(--color-violet)]">
+                <p
+                  className={`font-display-face text-3xl ${
+                    i === 1
+                      ? "text-[var(--color-rouge)]"
+                      : "text-[var(--color-violet)]"
+                  }`}
+                >
                   {String(i + 1).padStart(2, "0")}
                 </p>
                 <h3 className="mt-4 text-lg">{s.title}</h3>
@@ -151,7 +159,7 @@ export default function HomePage() {
                     }`}
                   >
                     {plan.highlight && (
-                      <span className="mb-3 self-start rounded-full bg-[var(--color-violet)] px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-[var(--color-ivoire)]">
+                      <span className="mb-3 self-start rounded-full bg-[var(--color-rouge-fonce)] px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-[var(--color-ivoire)]">
                         Le plus choisi
                       </span>
                     )}
@@ -172,7 +180,13 @@ export default function HomePage() {
                     <ul className="mt-6 flex-1 space-y-2.5 text-sm text-[var(--color-encre-douce)]">
                       {plan.features.map((f) => (
                         <li key={f} className="flex gap-2.5">
-                          <span className="mt-[0.4em] block h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-violet)]" />
+                          <span
+                            className={`mt-[0.4em] block h-1.5 w-1.5 shrink-0 rounded-full ${
+                              plan.highlight
+                                ? "bg-[var(--color-rouge)]"
+                                : "bg-[var(--color-violet)]"
+                            }`}
+                          />
                           {f}
                         </li>
                       ))}

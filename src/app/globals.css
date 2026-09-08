@@ -16,6 +16,10 @@
   --color-violet-fonce: #460f7b;   /* survol des boutons            */
   --color-violet-clair: #a267db;   /* violet lisible sur fond sombre */
   --color-violet-voile: #ede6f5;   /* badges, surfaces choisies      */
+  /* Le rouge #e6373c est un ton moyen : il ne tient pas le petit texte.
+     Règle — --color-rouge pour les formes pleines et les grands chiffres
+     (2,95:1 sur ivoire-creuse : à éviter là), --color-rouge-fonce dès qu'un
+     petit texte est en jeu, en couleur comme en fond. Jamais sur le violet. */
   --color-rouge-fonce: #c8191e;     /* le rouge quand il faut écrire  */
   --color-rouge-voile: #f8e2e3;     /* fond des erreurs               */
   --color-ivoire-creuse: #e2d6c7; /* fond secondaire, jauges        */
