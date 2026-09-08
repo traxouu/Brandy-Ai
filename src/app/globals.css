@@ -1,33 +1,34 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------
-   Brandy AI — Design tokens
-   Principal  #A51C30  •  Secondaire #FFF6EC  •  Troisième #161A1D
-   Sentient (logo) • Switzer (H1) • Satoshi (H2, H3, P)
+   Cally Leads — jetons de design
+   Violet #591899 · Ivoire #ede1d3 · Rouge #e6373c
+   Switzer (courant, H2) · Clash Display (logo « Leads », H1)
+   Palette et contrastes : scripts/cally_palette.py
    --------------------------------------------------------------- */
 @theme {
-  /* Imposées par la charte */
-  --color-brand: #a51c30;        /* principale  */
-  --color-cream: #fff6ec;        /* secondaire  */
-  --color-ink: #161a1d;          /* troisième   */
+  /* Imposées */
+  --color-violet: #591899;
+  --color-ivoire: #ede1d3;
+  --color-rouge: #e6373c;
 
-  /* Dérivées, chaque couple texte/fond vérifié au moins AA */
-  --color-brand-dark: #871324;   /* survol des boutons bordeaux        */
-  --color-brand-light: #da5f71;  /* bordeaux lisible sur fond encre    */
-  --color-brand-soft: #f5e3e5;   /* fond des messages d'erreur         */
-  --color-cream-deep: #f7eadc;   /* fond secondaire, jauges            */
-  --color-line: #eadccb;         /* filets, bordures                   */
-  --color-surface: #fffdfa;      /* fond des cartes                    */
-  --color-ink-soft: #383f45;     /* texte courant secondaire           */
-  --color-ink-muted: #5f676d;    /* légendes, métadonnées              */
+  /* Dérivées — chaque couple employé vérifié au moins AA */
+  --color-violet-fonce: #460f7b;   /* survol des boutons            */
+  --color-violet-clair: #a267db;   /* violet lisible sur fond sombre */
+  --color-violet-voile: #ede6f5;   /* badges, surfaces choisies      */
+  --color-rouge-fonce: #c8191e;     /* le rouge quand il faut écrire  */
+  --color-rouge-voile: #f8e2e3;     /* fond des erreurs               */
+  --color-ivoire-creuse: #e2d6c7; /* fond secondaire, jauges        */
+  --color-filet: #d0c6ba;                 /* filets et bordures             */
+  --color-surface: #fffcf8;             /* fond des cartes                */
+  --color-encre: #17131b;                 /* texte courant                  */
+  --color-encre-douce: #423a4a;     /* texte secondaire               */
+  --color-encre-tenue: #6b6076;     /* légendes, métadonnées          */
 
-  --font-logo: "Sentient", ui-serif, Georgia, serif;
-  /* Piste à l'essai pour le logo — bascule : pointer --font-logo ici. */
-  --font-zodiak: "Zodiak", ui-serif, Georgia, serif;
-  --font-display: "Switzer", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Clash Display", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Switzer", ui-sans-serif, system-ui, sans-serif;
 
-  --radius-xl2: 1.75rem;
+  --radius-xl2: 1.5rem;
 }
 
 :root {
@@ -39,8 +40,8 @@ html {
 }
 
 body {
-  background-color: var(--color-cream);
-  color: var(--color-ink);
+  background-color: var(--color-ivoire);
+  color: var(--color-encre);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -48,9 +49,15 @@ body {
 
 h1 {
   font-family: var(--font-display);
+  font-weight: 600;
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.02;
+}
+
+.font-display-face {
+  font-family: var(--font-display);
+  font-weight: 600;
 }
 
 h2,
@@ -61,13 +68,9 @@ h4 {
   letter-spacing: -0.015em;
 }
 
-.font-logo {
-  font-family: var(--font-logo);
-}
 
-.font-zodiak {
-  font-family: var(--font-zodiak);
-}
+
+
 
 /* Grain léger façon papier, pour réchauffer le crème */
 .paper::before {
@@ -81,18 +84,18 @@ h4 {
 }
 
 .rule {
-  border-top: 1px solid var(--color-line);
+  border-top: 1px solid var(--color-filet);
 }
 
 /* Champs de formulaire */
 .field {
   width: 100%;
   border-radius: 0.75rem;
-  border: 1px solid var(--color-line);
+  border: 1px solid var(--color-filet);
   background-color: var(--color-surface);
   padding: 0.7rem 0.9rem;
   font-size: 0.95rem;
-  color: var(--color-ink);
+  color: var(--color-encre);
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -102,7 +105,7 @@ h4 {
 
 .field:focus {
   outline: none;
-  border-color: var(--color-brand);
+  border-color: var(--color-violet);
   box-shadow: 0 0 0 3px rgba(165, 28, 48, 0.12);
 }
 
@@ -112,7 +115,7 @@ h4 {
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--color-ink-muted);
+  color: var(--color-encre-tenue);
   margin-bottom: 0.45rem;
 }
 
@@ -141,17 +144,17 @@ h4 {
 }
 
 .btn-primary {
-  background-color: var(--color-brand);
-  color: var(--color-cream);
+  background-color: var(--color-violet);
+  color: var(--color-ivoire);
 }
 
 .btn-primary:hover:not(:disabled) {
-  background-color: var(--color-brand-dark);
+  background-color: var(--color-violet-fonce);
 }
 
 .btn-ink {
-  background-color: var(--color-ink);
-  color: var(--color-cream);
+  background-color: var(--color-encre);
+  color: var(--color-ivoire);
 }
 
 .btn-ink:hover:not(:disabled) {
@@ -159,18 +162,18 @@ h4 {
 }
 
 .btn-ghost {
-  border: 1px solid var(--color-ink);
-  color: var(--color-ink);
+  border: 1px solid var(--color-encre);
+  color: var(--color-encre);
   background: transparent;
 }
 
 .btn-ghost:hover:not(:disabled) {
-  background-color: var(--color-ink);
-  color: var(--color-cream);
+  background-color: var(--color-encre);
+  color: var(--color-ivoire);
 }
 
 .card {
-  border: 1px solid var(--color-line);
+  border: 1px solid var(--color-filet);
   border-radius: 1.25rem;
   background-color: var(--color-surface);
 }

@@ -16,7 +16,7 @@ export async function POST(request: Request) {
   }
 
   const planId = payload.plan;
-  if (!planId || !isPlanId(planId) || planId === "free") {
+  if (!planId || !isPlanId(planId)) {
     return NextResponse.json({ error: "Plan inconnu." }, { status: 400 });
   }
 

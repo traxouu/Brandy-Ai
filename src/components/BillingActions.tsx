@@ -38,7 +38,7 @@ export default function BillingActions({ hasStripe }: { hasStripe: boolean }) {
         </button>
       )}
 
-      {error && <p className="text-sm text-[var(--color-brand-dark)]">{error}</p>}
+      {error && <p className="text-sm text-[var(--color-violet-fonce)]">{error}</p>}
     </div>
   );
 }

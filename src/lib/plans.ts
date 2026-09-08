@@ -1,94 +1,90 @@
-export type PlanId = "free" | "starter" | "studio" | "agency";
+export type PlanId = "solo" | "studio" | "equipe";
 
 export interface Plan {
   id: PlanId;
   name: string;
   price: number; // en euros / mois
-  projectLimit: number; // -1 = illimité
+  leadLimit: number; // leads qualifiés inclus par mois, -1 = illimité
   tagline: string;
   features: string[];
-  priceEnvKey?: string;
+  priceEnvKey: string;
   highlight?: boolean;
 }
 
 export const PLANS: Record<PlanId, Plan> = {
-  free: {
-    id: "free",
-    name: "Découverte",
-    price: 0,
-    projectLimit: 1,
-    tagline: "Un projet pour juger sur pièce.",
+  solo: {
+    id: "solo",
+    name: "Solo",
+    price: 39,
+    leadLimit: 150,
+    tagline: "Pour un indépendant qui répond seul.",
     features: [
-      "1 projet de marque",
-      "Audience, positionnement, palette, typographies",
-      "Logo vectoriel généré (SVG)",
-      "Export JSON du brand book",
+      "150 leads qualifiés par mois",
+      "Formulaire et widget à poser sur votre site",
+      "Score de qualification sur chaque lead",
+      "Notification par email",
     ],
-  },
-  starter: {
-    id: "starter",
-    name: "Starter",
-    price: 19,
-    projectLimit: 3,
-    tagline: "Pour lancer sa première marque proprement.",
-    features: [
-      "3 projets de marque",
-      "Brand book complet et imprimable",
-      "Régénération illimitée de chaque section",
-      "Ton de voix et messages clés",
-      "Support par email",
-    ],
-    priceEnvKey: "STRIPE_PRICE_STARTER",
+    priceEnvKey: "STRIPE_PRICE_SOLO",
   },
   studio: {
     id: "studio",
     name: "Studio",
-    price: 49,
-    projectLimit: 10,
-    tagline: "Le rythme d'un studio indépendant.",
+    price: 99,
+    leadLimit: 600,
+    tagline: "Le rythme d'une petite équipe commerciale.",
     features: [
-      "10 projets de marque",
-      "Tout le plan Starter",
-      "Variantes de logo (monogramme, pictogramme)",
-      "Personas détaillés et cartographie concurrentielle",
-      "Export SVG + CSS design tokens",
+      "600 leads qualifiés par mois",
+      "Tout le plan Solo",
+      "Règles de qualification sur mesure",
+      "Attribution automatique par commercial",
+      "Export CSV et connexion à votre CRM",
     ],
     priceEnvKey: "STRIPE_PRICE_STUDIO",
     highlight: true,
   },
-  agency: {
-    id: "agency",
-    name: "Agence",
-    price: 149,
-    projectLimit: -1,
-    tagline: "Pour les agences qui livrent en série.",
+  equipe: {
+    id: "equipe",
+    name: "Équipe",
+    price: 249,
+    leadLimit: -1,
+    tagline: "Pour les équipes qui traitent au volume.",
     features: [
-      "Projets illimités",
+      "Leads illimités",
       "Tout le plan Studio",
-      "Direction artistique en profondeur (effort max)",
-      "Priorité de génération",
+      "Plusieurs sources et plusieurs sites",
+      "Rapports d'équipe et suivi du taux de transformation",
       "Accompagnement dédié",
     ],
-    priceEnvKey: "STRIPE_PRICE_AGENCY",
+    priceEnvKey: "STRIPE_PRICE_EQUIPE",
   },
 };
 
-export const PLAN_ORDER: PlanId[] = ["free", "starter", "studio", "agency"];
+export const PLAN_ORDER: PlanId[] = ["solo", "studio", "equipe"];
+
+/** Le plan par défaut d'un compte sans abonnement actif. */
+export const DEFAULT_PLAN: PlanId = "solo";
 
 export function getPlan(id: string | null | undefined): Plan {
   if (id && id in PLANS) return PLANS[id as PlanId];
-  return PLANS.free;
+  return PLANS[DEFAULT_PLAN];
 }
 
 export function isPlanId(value: string): value is PlanId {
   return value in PLANS;
 }
 
-export function planAllowsMoreProjects(planId: string, currentCount: number) {
+export function planAllowsMore(planId: string, currentCount: number) {
   const plan = getPlan(planId);
-  return plan.projectLimit === -1 || currentCount < plan.projectLimit;
+  return plan.leadLimit === -1 || currentCount < plan.leadLimit;
 }
 
 export function formatLimit(plan: Plan) {
-  return plan.projectLimit === -1 ? "illimités" : String(plan.projectLimit);
+  return plan.leadLimit === -1 ? "illimités" : plan.leadLimit.toLocaleString("fr-FR");
+}
+
+/** Le quota en toutes lettres — « illimités » ne peut pas précéder le nom. */
+export function formatQuota(plan: Plan) {
+  return plan.leadLimit === -1
+    ? "Leads qualifiés illimités"
+    : `${plan.leadLimit.toLocaleString("fr-FR")} leads qualifiés / mois`;
 }

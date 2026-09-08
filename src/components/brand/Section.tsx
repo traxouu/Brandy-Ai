@@ -32,15 +32,15 @@ export default function Section({
   }
 
   return (
-    <section id={id} className="rise scroll-mt-24 border-t border-[var(--color-line)] pt-10">
+    <section id={id} className="rise scroll-mt-24 border-t border-[var(--color-filet)] pt-10">
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <p className="font-logo text-sm text-[var(--color-brand)]">
+          <p className="font-display-face text-sm text-[var(--color-violet)]">
             {String(index).padStart(2, "0")}
           </p>
           <h2 className="mt-1 text-3xl">{title}</h2>
           {subtitle && (
-            <p className="mt-2 max-w-2xl text-[var(--color-ink-soft)]">{subtitle}</p>
+            <p className="mt-2 max-w-2xl text-[var(--color-encre-douce)]">{subtitle}</p>
           )}
         </div>
 
@@ -54,7 +54,7 @@ export default function Section({
       </div>
 
       {open && (
-        <div className="no-print mt-6 rounded-xl border border-[var(--color-line)] bg-white/70 p-5">
+        <div className="no-print mt-6 rounded-xl border border-[var(--color-filet)] bg-white/70 p-5">
           <label className="label" htmlFor={`refine-${id}`}>
             Vos remarques au directeur créatif
           </label>
@@ -70,7 +70,7 @@ export default function Section({
             <button onClick={submit} disabled={refining} className="btn btn-primary px-5 py-2 text-sm">
               {refining ? "En cours…" : "Régénérer cette section"}
             </button>
-            <span className="text-xs text-[var(--color-ink-muted)]">
+            <span className="text-xs text-[var(--color-encre-tenue)]">
               Le reste de l&apos;identité est conservé.
             </span>
           </div>

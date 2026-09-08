@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import type { Plan } from "@/lib/plans";
-import { formatLimit } from "@/lib/plans";
+import { formatQuota } from "@/lib/plans";
 
 interface Props {
   plan: Plan;
@@ -23,11 +23,6 @@ export default function PlanCard({ plan, currentPlan, authenticated }: Props) {
       router.push("/register");
       return;
     }
-    if (plan.id === "free") {
-      router.push("/dashboard");
-      return;
-    }
-
     setError(null);
     setPending(true);
     try {
@@ -61,39 +56,39 @@ export default function PlanCard({ plan, currentPlan, authenticated }: Props) {
     <div
       className={`card flex flex-col p-7 ${
         plan.highlight
-          ? "border-[var(--color-brand)] ring-1 ring-[var(--color-brand)]"
+          ? "border-[var(--color-violet)] ring-1 ring-[var(--color-violet)]"
           : ""
       }`}
     >
       {plan.highlight && (
-        <span className="mb-3 self-start rounded-full bg-[var(--color-brand)] px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-[var(--color-cream)]">
+        <span className="mb-3 self-start rounded-full bg-[var(--color-violet)] px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-[var(--color-ivoire)]">
           Le plus choisi
         </span>
       )}
 
       <h3 className="text-xl">{plan.name}</h3>
-      <p className="mt-1 text-sm text-[var(--color-ink-muted)]">{plan.tagline}</p>
+      <p className="mt-1 text-sm text-[var(--color-encre-tenue)]">{plan.tagline}</p>
 
-      <p className="mt-6 font-logo text-5xl leading-none">
-        {plan.price === 0 ? "0 €" : `${plan.price} €`}
-        <span className="text-sm font-normal text-[var(--color-ink-muted)]"> / mois</span>
+      <p className="mt-6 font-display-face text-5xl leading-none">
+        {plan.price} €
+        <span className="text-sm font-normal text-[var(--color-encre-tenue)]"> / mois</span>
       </p>
 
-      <p className="mt-3 text-sm font-bold text-[var(--color-brand)]">
-        {formatLimit(plan)} projet{plan.projectLimit === 1 ? "" : "s"} de marque
+      <p className="mt-3 text-sm font-bold text-[var(--color-violet)]">
+        {formatQuota(plan)}
       </p>
 
-      <ul className="mt-6 flex-1 space-y-2.5 text-sm text-[var(--color-ink-soft)]">
+      <ul className="mt-6 flex-1 space-y-2.5 text-sm text-[var(--color-encre-douce)]">
         {plan.features.map((feature) => (
           <li key={feature} className="flex gap-2.5">
-            <span className="mt-[0.35em] block h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-brand)]" />
+            <span className="mt-[0.35em] block h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-violet)]" />
             {feature}
           </li>
         ))}
       </ul>
 
       {error && (
-        <p className="mt-4 text-xs text-[var(--color-brand-dark)]">{error}</p>
+        <p className="mt-4 text-xs text-[var(--color-violet-fonce)]">{error}</p>
       )}
 
       <button
@@ -105,9 +100,7 @@ export default function PlanCard({ plan, currentPlan, authenticated }: Props) {
           ? "Votre plan actuel"
           : pending
             ? "Redirection…"
-            : plan.price === 0
-              ? "Commencer gratuitement"
-              : `Passer au plan ${plan.name}`}
+            : `Choisir ${plan.name}`}
       </button>
     </div>
   );

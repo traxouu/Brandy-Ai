@@ -80,7 +80,7 @@ export default function ExportMenu({
             onClick={() => setOpen(false)}
             aria-label="Fermer le menu d'export"
           />
-          <div className="absolute right-0 z-20 mt-2 w-60 overflow-hidden rounded-xl border border-[var(--color-line)] bg-[var(--color-surface)] shadow-lg">
+          <div className="absolute right-0 z-20 mt-2 w-60 overflow-hidden rounded-xl border border-[var(--color-filet)] bg-[var(--color-surface)] shadow-lg">
             {actions.map((action) => (
               <button
                 key={action.label}
@@ -88,7 +88,7 @@ export default function ExportMenu({
                   action.run();
                   setOpen(false);
                 }}
-                className="block w-full px-5 py-3 text-left text-sm hover:bg-[var(--color-cream-deep)]"
+                className="block w-full px-5 py-3 text-left text-sm hover:bg-[var(--color-ivoire-creuse)]"
               >
                 {action.label}
               </button>

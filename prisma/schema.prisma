@@ -13,7 +13,7 @@ model User {
   email                String    @unique
   name                 String
   passwordHash         String
-  plan                 String    @default("free")
+  plan                 String    @default("solo")
   planStatus           String    @default("active")
   stripeCustomerId     String?   @unique
   stripeSubscriptionId String?

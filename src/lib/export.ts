@@ -29,7 +29,7 @@ export function buildCssTokens(brief: Brief, identity: BrandIdentity) {
     .join("\n");
 
   return `/* ${brief.brandName} — design tokens
- * Généré par Brandy AI
+ * Généré par Cally Leads
  * Archétype : ${identity.summary.brandArchetype}
  */
 :root {
@@ -43,7 +43,7 @@ ${fonts}
 export function buildJsonExport(brief: Brief, identity: BrandIdentity) {
   return JSON.stringify(
     {
-      generator: "Brandy AI",
+      generator: "Cally Leads",
       generatedAt: new Date().toISOString(),
       brief,
       identity,

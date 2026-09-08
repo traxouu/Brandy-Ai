@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { getCurrentUser } from "@/lib/session";
 import { briefSchema } from "@/lib/brand-schema";
-import { getPlan, planAllowsMoreProjects } from "@/lib/plans";
+import { getPlan, planAllowsMore } from "@/lib/plans";
 
 export async function POST(request: Request) {
   const user = await getCurrentUser();
@@ -24,11 +24,11 @@ export async function POST(request: Request) {
   }
 
   const count = await prisma.project.count({ where: { userId: user.id } });
-  if (!planAllowsMoreProjects(user.plan, count)) {
+  if (!planAllowsMore(user.plan, count)) {
     const plan = getPlan(user.plan);
     return NextResponse.json(
       {
-        error: `Votre plan ${plan.name} est limité à ${plan.projectLimit} projet(s). Passez à un plan supérieur pour en créer davantage.`,
+        error: `Votre plan ${plan.name} est limité à ${plan.leadLimit} projet(s). Passez à un plan supérieur pour en créer davantage.`,
         code: "PLAN_LIMIT",
       },
       { status: 402 }

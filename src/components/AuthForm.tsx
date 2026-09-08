@@ -95,7 +95,7 @@ export default function AuthForm({ mode }: { mode: "login" | "register" }) {
       </div>
 
       {error && (
-        <p className="rounded-lg border border-[var(--color-brand)]/30 bg-[var(--color-brand-soft)] px-4 py-3 text-sm text-[var(--color-brand-dark)]">
+        <p className="rounded-lg border border-[var(--color-violet)]/30 bg-[var(--color-violet-voile)] px-4 py-3 text-sm text-[var(--color-violet-fonce)]">
           {error}
         </p>
       )}
@@ -108,18 +108,18 @@ export default function AuthForm({ mode }: { mode: "login" | "register" }) {
             : "Me connecter"}
       </button>
 
-      <p className="text-center text-sm text-[var(--color-ink-muted)]">
+      <p className="text-center text-sm text-[var(--color-encre-tenue)]">
         {isRegister ? (
           <>
             Déjà un compte ?{" "}
-            <Link href="/login" className="font-bold text-[var(--color-brand)]">
+            <Link href="/login" className="font-bold text-[var(--color-violet)]">
               Connexion
             </Link>
           </>
         ) : (
           <>
             Pas encore de compte ?{" "}
-            <Link href="/register" className="font-bold text-[var(--color-brand)]">
+            <Link href="/register" className="font-bold text-[var(--color-violet)]">
               Créer un compte
             </Link>
           </>

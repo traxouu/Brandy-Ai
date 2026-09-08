@@ -22,7 +22,7 @@ export default function SafeSvg({
   if (!clean) {
     return (
       <div
-        className={`flex items-center justify-center text-xs uppercase tracking-[0.14em] text-[var(--color-ink-muted)] ${className}`}
+        className={`flex items-center justify-center text-xs uppercase tracking-[0.14em] text-[var(--color-encre-tenue)] ${className}`}
       >
         {fallback}
       </div>

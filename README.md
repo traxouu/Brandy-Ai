@@ -133,46 +133,43 @@ envoyée (modèle, réflexion adaptative, schéma de sortie, mise en cache du pr
 système, effort), le parsing de la réponse et l'assainissement des SVG — sans
 consommer de crédits.
 
-## Design system
+## Design system — Cally Leads
 
-### Logo
-
-Le nom entier en couleur principale, Sentient regular, traitement minimal. Les
-logos sont **vectorisés depuis les glyphes réels** : aucun `<text>`, donc aucun
-risque de rendu différent si la police n'est pas chargée.
-
-Le kit complet — wordmark, variantes fond sombre et monochrome, monogramme,
-favicon, image sociale — est dans [`public/brand/`](public/brand/README.md),
-avec ses règles d'usage.
+Le site public porte l'identité **Cally Leads**. Le kit complet et ses règles
+d'usage sont dans [`public/brand/cally/`](public/brand/cally/README.md).
 
 ### Palette
 
-| Jeton | Hex | Rôle |
+| Rôle | CMYK | Hex |
 |---|---|---|
-| `--color-brand` | `#A51C30` | Couleur principale. Accents, boutons, liens, chiffres. |
-| `--color-cream` | `#FFF6EC` | Couleur secondaire. Fond de toutes les pages claires. |
-| `--color-ink` | `#161A1D` | Couleur tertiaire. Titres et texte courant. |
-| `--color-brand-dark` | `#871324` | Survol et appui des boutons bordeaux. |
-| `--color-brand-light` | `#DA5F71` | Bordeaux lisible sur fond encre (sections sombres). |
-| `--color-brand-soft` | `#F5E3E5` | Fond des messages d'erreur et des états d'alerte. |
-| `--color-cream-deep` | `#F7EADC` | Fond secondaire, jauges, aplats de repos. |
-| `--color-line` | `#EADCCB` | Filets, bordures de cartes et de champs. |
-| `--color-ink-soft` | `#383F45` | Texte courant secondaire, paragraphes longs. |
-| `--color-ink-muted` | `#5F676D` | Légendes, métadonnées, texte tertiaire. |
-| `--color-surface` | `#FFFDFA` | Fond des cartes, légèrement au-dessus du crème. |
+| Principale | 42 / 84 / 0 / 40 | `%s` |
+| Fond | 0 / 5 / 11 / 7 | `%s` |
+| Accent | 0 / 76 / 74 / 10 | `%s` |
 
-Chaque couple texte/fond employé dans le produit passe au moins AA (4,5:1).
-Un piège à retenir : **#A51C30 sur #161A1D ne donne que 2,34:1** — sur fond
-encre, utiliser `--color-brand-light` (#DA5F71). `scripts/palette.py` rejoue
-toute la vérification.
+Onze jetons de service en sont dérivés dans `src/app/globals.css`, chaque couple
+employé vérifié au moins AA. Deux pièges : **rouge sur violet = 2,47:1**, à
+proscrire ; **rouge sur ivoire = 3,28:1**, réservé aux aplats — pour écrire en
+rouge, `--color-rouge-fonce`. `scripts/cally_palette.py` rejoue la vérification.
 
 ### Typographies
 
-| Rôle | Police | Graisse |
+| Rôle | Fonte | Graisse |
 |---|---|---|
-| Logo | Sentient | 400 |
-| H1 | Switzer | 700 |
-| P, H2, H3 | Satoshi | 400 / 700 |
+| Logo — « Cally » | Switzer | 500 |
+| Logo — « Leads » | Clash Display | 600 |
+| H1 | Clash Display | 600 |
+| H2, H3, texte courant | Switzer | 400 / 700 |
 
-Les polices viennent de Fontshare ; les jetons sont déclarés dans
-`src/app/globals.css` sous `@theme` (Tailwind v4).
+Chargées depuis Fontshare dans `src/app/layout.tsx`. Le logo, lui, est vectorisé
+dans `src/components/Logo.tsx` : il ne dépend pas du chargement des fontes.
+
+## État du produit
+
+Le **site public** (accueil, tarifs, authentification) est passé sous Cally Leads
+avec trois offres : Solo, Studio, Équipe.
+
+L'**application** derrière le compte est restée celle de Brandy AI : elle génère
+des identités de marque et raisonne en projets, pas en leads. Les deux ne
+racontent pas encore la même histoire — le dashboard parle de projets pendant
+que les offres parlent de leads qualifiés. Convertir la logique produit est un
+chantier distinct du site.

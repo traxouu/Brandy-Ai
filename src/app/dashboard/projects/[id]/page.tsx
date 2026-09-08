@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props) {
   const { id } = await params;
   const user = await requireUser();
   const project = await prisma.project.findFirst({ where: { id, userId: user.id } });
-  return { title: project ? `${project.name} — Brandy AI` : "Projet — Brandy AI" };
+  return { title: project ? `${project.name} — Cally Leads` : "Projet — Cally Leads" };
 }
 
 export default async function ProjectPage({ params, searchParams }: Props) {

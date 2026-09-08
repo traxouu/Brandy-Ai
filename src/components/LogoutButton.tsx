@@ -18,7 +18,7 @@ export default function LogoutButton() {
     <button
       onClick={logout}
       disabled={pending}
-      className="text-sm font-medium text-[var(--color-ink-muted)] hover:text-[var(--color-brand)]"
+      className="text-sm font-medium text-[var(--color-encre-tenue)] hover:text-[var(--color-violet)]"
     >
       {pending ? "…" : "Déconnexion"}
     </button>

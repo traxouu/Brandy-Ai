@@ -147,14 +147,14 @@ export default function BrandStudio({ project, autostart, apiKeyConfigured }: Pr
         <div>
           <Link
             href="/dashboard"
-            className="text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-brand)]"
+            className="text-sm text-[var(--color-encre-tenue)] hover:text-[var(--color-violet)]"
           >
             ← Tous les projets
           </Link>
-          <h1 className="font-logo mt-3 text-[clamp(2.4rem,6vw,4rem)] leading-none">
+          <h1 className="font-display-face mt-3 text-[clamp(2.4rem,6vw,4rem)] leading-none">
             {project.brief.brandName}
           </h1>
-          <p className="mt-3 text-[var(--color-ink-soft)]">
+          <p className="mt-3 text-[var(--color-encre-douce)]">
             {project.brief.industry} · {project.brief.market} ·{" "}
             {project.brief.priceTier}
           </p>
@@ -177,7 +177,7 @@ export default function BrandStudio({ project, autostart, apiKeyConfigured }: Pr
       </div>
 
       {!apiKeyConfigured && (
-        <p className="no-print mt-8 rounded-xl border border-[var(--color-brand)]/30 bg-[var(--color-brand-soft)] px-5 py-4 text-sm text-[var(--color-brand-dark)]">
+        <p className="no-print mt-8 rounded-xl border border-[var(--color-violet)]/30 bg-[var(--color-violet-voile)] px-5 py-4 text-sm text-[var(--color-violet-fonce)]">
           <strong className="font-bold">ANTHROPIC_API_KEY absente :</strong> le
           directeur créatif ne peut pas travailler tant que la clé n&apos;est pas
           définie côté serveur.
@@ -185,7 +185,7 @@ export default function BrandStudio({ project, autostart, apiKeyConfigured }: Pr
       )}
 
       {error && (
-        <p className="no-print mt-8 rounded-xl border border-[var(--color-brand)]/30 bg-[var(--color-brand-soft)] px-5 py-4 text-sm text-[var(--color-brand-dark)]">
+        <p className="no-print mt-8 rounded-xl border border-[var(--color-violet)]/30 bg-[var(--color-violet-voile)] px-5 py-4 text-sm text-[var(--color-violet-fonce)]">
           {error}
         </p>
       )}
@@ -199,7 +199,7 @@ export default function BrandStudio({ project, autostart, apiKeyConfigured }: Pr
               <a
                 key={key}
                 href={`#${key}`}
-                className="rounded-full border border-[var(--color-line)] bg-white/60 px-4 py-1.5 text-xs font-medium text-[var(--color-ink-soft)] hover:border-[var(--color-brand)] hover:text-[var(--color-brand)]"
+                className="rounded-full border border-[var(--color-filet)] bg-white/60 px-4 py-1.5 text-xs font-medium text-[var(--color-encre-douce)] hover:border-[var(--color-violet)] hover:text-[var(--color-violet)]"
               >
                 {SECTION_LABELS[key]}
               </a>
@@ -216,7 +216,7 @@ export default function BrandStudio({ project, autostart, apiKeyConfigured }: Pr
         !generating && (
           <div className="card mt-14 px-8 py-20 text-center">
             <h2 className="text-2xl">Le brief est prêt. L&apos;identité, pas encore.</h2>
-            <p className="mx-auto mt-3 max-w-md text-[var(--color-ink-soft)]">
+            <p className="mx-auto mt-3 max-w-md text-[var(--color-encre-douce)]">
               Lancez la génération : le directeur créatif construit l&apos;audience, le
               positionnement, la palette, les typographies et les logos en une passe.
             </p>

@@ -44,7 +44,7 @@ function getClient() {
 /** Les abonnements élevés achètent un travail plus poussé du modèle. */
 export function effortForPlan(planId: string): "medium" | "high" | "xhigh" {
   const plan = getPlan(planId);
-  if (plan.id === "agency") return "xhigh";
+  if (plan.id === "equipe") return "xhigh";
   if (plan.id === "studio") return "high";
   return "medium";
 }

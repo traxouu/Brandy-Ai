@@ -33,7 +33,7 @@ export default function ProjectCard({ project }: { project: ParsedProject }) {
   return (
     <div className="card flex flex-col overflow-hidden">
       <Link href={`/dashboard/projects/${project.id}`} className="flex-1">
-        <div className="flex h-24 items-stretch bg-[var(--color-cream-deep)]">
+        <div className="flex h-24 items-stretch bg-[var(--color-ivoire-creuse)]">
           {colors.length > 0 ? (
             colors.map((color) => (
               <div
@@ -44,7 +44,7 @@ export default function ProjectCard({ project }: { project: ParsedProject }) {
               />
             ))
           ) : (
-            <div className="flex w-full items-center justify-center text-xs font-bold uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
+            <div className="flex w-full items-center justify-center text-xs font-bold uppercase tracking-[0.14em] text-[var(--color-encre-tenue)]">
               Palette à générer
             </div>
           )}
@@ -52,32 +52,32 @@ export default function ProjectCard({ project }: { project: ParsedProject }) {
 
         <div className="p-5">
           <div className="flex items-start justify-between gap-3">
-            <h3 className="font-logo text-xl leading-tight">{project.name}</h3>
+            <h3 className="font-display-face text-xl leading-tight">{project.name}</h3>
             <span
               className={`shrink-0 rounded-full px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-[0.1em] ${
                 project.status === "ready"
-                  ? "bg-[var(--color-ink)] text-[var(--color-cream)]"
+                  ? "bg-[var(--color-encre)] text-[var(--color-ivoire)]"
                   : project.status === "error"
-                    ? "bg-[var(--color-brand)] text-[var(--color-cream)]"
-                    : "bg-[var(--color-cream-deep)] text-[var(--color-ink-muted)]"
+                    ? "bg-[var(--color-violet)] text-[var(--color-ivoire)]"
+                    : "bg-[var(--color-ivoire-creuse)] text-[var(--color-encre-tenue)]"
               }`}
             >
               {STATUS_LABEL[project.status] ?? project.status}
             </span>
           </div>
 
-          <p className="mt-2 text-sm text-[var(--color-ink-muted)]">
+          <p className="mt-2 text-sm text-[var(--color-encre-tenue)]">
             {project.brief.industry}
           </p>
 
-          <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-[var(--color-ink-soft)]">
+          <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-[var(--color-encre-douce)]">
             {project.identity?.summary.oneLiner ?? project.brief.offer}
           </p>
         </div>
       </Link>
 
-      <div className="flex items-center justify-between border-t border-[var(--color-line)] px-5 py-3">
-        <span className="text-xs text-[var(--color-ink-muted)]">
+      <div className="flex items-center justify-between border-t border-[var(--color-filet)] px-5 py-3">
+        <span className="text-xs text-[var(--color-encre-tenue)]">
           {new Date(project.updatedAt).toLocaleDateString("fr-FR", {
             day: "2-digit",
             month: "short",
@@ -90,13 +90,13 @@ export default function ProjectCard({ project }: { project: ParsedProject }) {
             <button
               onClick={remove}
               disabled={deleting}
-              className="font-bold text-[var(--color-brand)]"
+              className="font-bold text-[var(--color-violet)]"
             >
               {deleting ? "Suppression…" : "Confirmer"}
             </button>
             <button
               onClick={() => setConfirming(false)}
-              className="text-[var(--color-ink-muted)]"
+              className="text-[var(--color-encre-tenue)]"
             >
               Annuler
             </button>
@@ -104,7 +104,7 @@ export default function ProjectCard({ project }: { project: ParsedProject }) {
         ) : (
           <button
             onClick={() => setConfirming(true)}
-            className="text-xs text-[var(--color-ink-muted)] hover:text-[var(--color-brand)]"
+            className="text-xs text-[var(--color-encre-tenue)] hover:text-[var(--color-violet)]"
           >
             Supprimer
           </button>

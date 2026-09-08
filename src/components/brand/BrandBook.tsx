@@ -37,15 +37,15 @@ export default function BrandBook({ identity, onRefine, refiningSection }: Props
       {/* 01 — Direction créative */}
       <Section {...props("summary", 1)} subtitle={identity.summary.oneLiner}>
         <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
-          <p className="text-lg leading-relaxed text-[var(--color-ink-soft)]">
+          <p className="text-lg leading-relaxed text-[var(--color-encre-douce)]">
             {identity.summary.creativeDirection}
           </p>
           <div className="card p-6">
             <p className="label">Archétype de marque</p>
-            <p className="font-logo mt-2 text-3xl text-[var(--color-brand)]">
+            <p className="font-display-face mt-2 text-3xl text-[var(--color-violet)]">
               {identity.summary.brandArchetype}
             </p>
-            <p className="mt-4 text-sm leading-relaxed text-[var(--color-ink-soft)]">
+            <p className="mt-4 text-sm leading-relaxed text-[var(--color-encre-douce)]">
               {identity.summary.archetypeRationale}
             </p>
           </div>
@@ -57,13 +57,13 @@ export default function BrandBook({ identity, onRefine, refiningSection }: Props
         <div className="mb-8 grid gap-6 sm:grid-cols-2">
           <div className="card p-6">
             <p className="label">Cible principale</p>
-            <p className="mt-2 leading-relaxed text-[var(--color-ink-soft)]">
+            <p className="mt-2 leading-relaxed text-[var(--color-encre-douce)]">
               {identity.audience.coreSegment}
             </p>
           </div>
           <div className="card p-6">
             <p className="label">Cible secondaire</p>
-            <p className="mt-2 leading-relaxed text-[var(--color-ink-soft)]">
+            <p className="mt-2 leading-relaxed text-[var(--color-encre-douce)]">
               {identity.audience.secondarySegment}
             </p>
           </div>
@@ -73,16 +73,16 @@ export default function BrandBook({ identity, onRefine, refiningSection }: Props
           {identity.audience.personas.map((persona) => (
             <article key={persona.name} className="card p-6">
               <div className="flex items-baseline justify-between gap-3">
-                <h3 className="font-logo text-2xl">{persona.name}</h3>
-                <span className="text-xs font-bold uppercase tracking-[0.1em] text-[var(--color-brand)]">
+                <h3 className="font-display-face text-2xl">{persona.name}</h3>
+                <span className="text-xs font-bold uppercase tracking-[0.1em] text-[var(--color-violet)]">
                   {persona.archetypeLabel}
                 </span>
               </div>
-              <p className="mt-1 text-sm text-[var(--color-ink-muted)]">
+              <p className="mt-1 text-sm text-[var(--color-encre-tenue)]">
                 {persona.age} · {persona.situation}
               </p>
 
-              <blockquote className="mt-5 border-l-2 border-[var(--color-brand)] pl-4 font-logo text-lg italic leading-snug">
+              <blockquote className="mt-5 border-l-2 border-[var(--color-violet)] pl-4 font-display-face text-lg italic leading-snug">
                 « {persona.quote} »
               </blockquote>
 
@@ -115,11 +115,11 @@ export default function BrandBook({ identity, onRefine, refiningSection }: Props
 
       {/* 03 — Positionnement */}
       <Section {...props("positioning", 3)}>
-        <div className="rounded-[var(--radius-xl2)] bg-[var(--color-ink)] p-8 text-[var(--color-cream)] sm:p-12">
-          <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--color-cream)]/50">
+        <div className="rounded-[var(--radius-xl2)] bg-[var(--color-encre)] p-8 text-[var(--color-ivoire)] sm:p-12">
+          <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--color-ivoire)]/50">
             Phrase de positionnement
           </p>
-          <p className="font-logo mt-4 text-[clamp(1.4rem,3vw,2.2rem)] leading-snug">
+          <p className="font-display-face mt-4 text-[clamp(1.4rem,3vw,2.2rem)] leading-snug">
             « {identity.positioning.statement} »
           </p>
         </div>
@@ -127,12 +127,12 @@ export default function BrandBook({ identity, onRefine, refiningSection }: Props
         <div className="mt-8 grid gap-8 lg:grid-cols-2">
           <div>
             <p className="label">Proposition de valeur</p>
-            <p className="leading-relaxed text-[var(--color-ink-soft)]">
+            <p className="leading-relaxed text-[var(--color-encre-douce)]">
               {identity.positioning.valueProposition}
             </p>
 
             <p className="label mt-8">Angle concurrentiel</p>
-            <p className="leading-relaxed text-[var(--color-ink-soft)]">
+            <p className="leading-relaxed text-[var(--color-encre-douce)]">
               {identity.positioning.competitiveAngle}
             </p>
           </div>
@@ -151,7 +151,7 @@ export default function BrandBook({ identity, onRefine, refiningSection }: Props
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {identity.positioning.taglines.map((tagline, i) => (
               <div key={i} className="card px-5 py-4">
-                <p className="font-logo text-lg leading-snug">{tagline}</p>
+                <p className="font-display-face text-lg leading-snug">{tagline}</p>
               </div>
             ))}
           </div>
@@ -164,7 +164,7 @@ export default function BrandBook({ identity, onRefine, refiningSection }: Props
           {identity.voice.toneAttributes.map((attr) => (
             <span
               key={attr}
-              className="rounded-full bg-[var(--color-brand)] px-4 py-1.5 text-sm font-bold text-[var(--color-cream)]"
+              className="rounded-full bg-[var(--color-violet)] px-4 py-1.5 text-sm font-bold text-[var(--color-ivoire)]"
             >
               {attr}
             </span>
@@ -190,7 +190,7 @@ export default function BrandBook({ identity, onRefine, refiningSection }: Props
           >
             {identity.voice.sampleHeadline}
           </h3>
-          <p className="mt-4 max-w-2xl leading-relaxed text-[var(--color-ink-soft)]">
+          <p className="mt-4 max-w-2xl leading-relaxed text-[var(--color-encre-douce)]">
             {identity.voice.sampleBodyCopy}
           </p>
         </div>
@@ -209,15 +209,15 @@ export default function BrandBook({ identity, onRefine, refiningSection }: Props
               </div>
               <div className="p-5">
                 <div className="flex items-baseline justify-between gap-3">
-                  <h3 className="font-logo text-xl">{color.name}</h3>
-                  <span className="text-[0.65rem] font-bold uppercase tracking-[0.1em] text-[var(--color-brand)]">
+                  <h3 className="font-display-face text-xl">{color.name}</h3>
+                  <span className="text-[0.65rem] font-bold uppercase tracking-[0.1em] text-[var(--color-violet)]">
                     {color.role}
                   </span>
                 </div>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink-soft)]">
+                <p className="mt-2 text-sm leading-relaxed text-[var(--color-encre-douce)]">
                   {color.usage}
                 </p>
-                <p className="mt-3 text-xs text-[var(--color-ink-muted)]">
+                <p className="mt-3 text-xs text-[var(--color-encre-tenue)]">
                   {color.contrastNote}
                 </p>
               </div>
@@ -253,21 +253,21 @@ export default function BrandBook({ identity, onRefine, refiningSection }: Props
               <div className="mt-6 grid gap-4 text-sm sm:grid-cols-3">
                 <div>
                   <p className="label">Tailles</p>
-                  <p className="text-[var(--color-ink-soft)]">{font.sizeGuidance}</p>
+                  <p className="text-[var(--color-encre-douce)]">{font.sizeGuidance}</p>
                 </div>
                 <div>
                   <p className="label">Fallback</p>
-                  <p className="font-mono text-xs text-[var(--color-ink-soft)]">
+                  <p className="font-mono text-xs text-[var(--color-encre-douce)]">
                     {font.fallback}
                   </p>
                 </div>
                 <div>
                   <p className="label">Source</p>
-                  <p className="text-[var(--color-ink-soft)]">{font.source}</p>
+                  <p className="text-[var(--color-encre-douce)]">{font.source}</p>
                 </div>
               </div>
 
-              <p className="mt-5 border-t border-[var(--color-line)] pt-4 text-sm leading-relaxed text-[var(--color-ink-soft)]">
+              <p className="mt-5 border-t border-[var(--color-filet)] pt-4 text-sm leading-relaxed text-[var(--color-encre-douce)]">
                 {font.rationale}
               </p>
             </div>
@@ -281,7 +281,7 @@ export default function BrandBook({ identity, onRefine, refiningSection }: Props
           <div className="card flex min-h-64 items-center justify-center bg-white p-10">
             <SafeSvg markup={identity.logo.wordmarkSvg} className="max-h-40 w-full max-w-lg" fallback="Wordmark indisponible" />
           </div>
-          <div className="card flex min-h-64 items-center justify-center bg-[var(--color-ink)] p-10">
+          <div className="card flex min-h-64 items-center justify-center bg-[var(--color-encre)] p-10">
             <SafeSvg markup={identity.logo.monogramSvg} className="max-h-32 w-32" fallback="Monogramme indisponible" />
           </div>
         </div>
@@ -289,13 +289,13 @@ export default function BrandBook({ identity, onRefine, refiningSection }: Props
         <div className="mt-8 grid gap-8 lg:grid-cols-3">
           <div>
             <p className="label">Construction</p>
-            <p className="text-sm leading-relaxed text-[var(--color-ink-soft)]">
+            <p className="text-sm leading-relaxed text-[var(--color-encre-douce)]">
               {identity.logo.construction}
             </p>
           </div>
           <div>
             <p className="label">Zone de respiration</p>
-            <p className="text-sm leading-relaxed text-[var(--color-ink-soft)]">
+            <p className="text-sm leading-relaxed text-[var(--color-encre-douce)]">
               {identity.logo.clearSpace}
             </p>
           </div>
@@ -312,7 +312,7 @@ export default function BrandBook({ identity, onRefine, refiningSection }: Props
           {identity.moodboard.keywords.map((keyword) => (
             <span
               key={keyword}
-              className="font-logo rounded-full border border-[var(--color-line)] bg-white/70 px-5 py-2 text-lg"
+              className="font-display-face rounded-full border border-[var(--color-filet)] bg-white/70 px-5 py-2 text-lg"
             >
               {keyword}
             </span>
@@ -322,13 +322,13 @@ export default function BrandBook({ identity, onRefine, refiningSection }: Props
         <div className="grid gap-8 lg:grid-cols-3">
           <div>
             <p className="label">Direction photographique</p>
-            <p className="text-sm leading-relaxed text-[var(--color-ink-soft)]">
+            <p className="text-sm leading-relaxed text-[var(--color-encre-douce)]">
               {identity.moodboard.imageryDirection}
             </p>
           </div>
           <div>
             <p className="label">Matières et textures</p>
-            <p className="text-sm leading-relaxed text-[var(--color-ink-soft)]">
+            <p className="text-sm leading-relaxed text-[var(--color-encre-douce)]">
               {identity.moodboard.textureAndMaterials}
             </p>
           </div>
@@ -345,7 +345,7 @@ export default function BrandBook({ identity, onRefine, refiningSection }: Props
           {identity.applications.map((application) => (
             <div key={application.surface} className="card p-6">
               <h3 className="text-lg">{application.surface}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink-soft)]">
+              <p className="mt-2 text-sm leading-relaxed text-[var(--color-encre-douce)]">
                 {application.direction}
               </p>
             </div>
@@ -358,10 +358,10 @@ export default function BrandBook({ identity, onRefine, refiningSection }: Props
         <ol className="space-y-4">
           {identity.nextSteps.map((step, i) => (
             <li key={i} className="flex gap-5">
-              <span className="font-logo text-2xl text-[var(--color-brand)]">
+              <span className="font-display-face text-2xl text-[var(--color-violet)]">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <span className="pt-1.5 leading-relaxed text-[var(--color-ink-soft)]">
+              <span className="pt-1.5 leading-relaxed text-[var(--color-encre-douce)]">
                 {step}
               </span>
             </li>
