@@ -1,0 +1,215 @@
+{
+  "summary": {
+    "oneLiner": "L'art de la table qui survit au lave-vaisselle.",
+    "creativeDirection": "Une matière brute assumée, sans folklore artisanal.",
+    "brandArchetype": "Le Créateur",
+    "archetypeRationale": "La marque valorise le geste et la fabrication."
+  },
+  "audience": {
+    "coreSegment": "Trentenaires urbains qui reçoivent souvent.",
+    "secondarySegment": "Offrants pour listes de mariage.",
+    "insight": "On veut du beau qui ne demande pas d'attention.",
+    "personas": [
+      {
+        "name": "Léa",
+        "archetypeLabel": "L'hôte régulière",
+        "age": "32 ans",
+        "situation": "Vient d'emménager en couple à Lyon.",
+        "goals": [
+          "Recevoir sans stress",
+          "Constituer un service durable"
+        ],
+        "frustrations": [
+          "La vaisselle dépareillée",
+          "Le lavage à la main"
+        ],
+        "triggers": [
+          "Une crémaillère"
+        ],
+        "channels": [
+          "Instagram",
+          "Newsletter"
+        ],
+        "quote": "Je veux du beau que je peux mettre au lave-vaisselle."
+      },
+      {
+        "name": "Marc",
+        "archetypeLabel": "L'offrant",
+        "age": "45 ans",
+        "situation": "Cherche un cadeau de mariage sûr.",
+        "goals": [
+          "Offrir un objet durable",
+          "Ne pas se tromper"
+        ],
+        "frustrations": [
+          "Les listes impersonnelles",
+          "Les prix opaques"
+        ],
+        "triggers": [
+          "Un mariage"
+        ],
+        "channels": [
+          "Recherche Google",
+          "Bouche-à-oreille"
+        ],
+        "quote": "Je veux offrir quelque chose qui reste."
+      }
+    ]
+  },
+  "positioning": {
+    "statement": "Pour les hôtes qui reçoivent souvent, l'art de la table qui passe au lave-vaisselle.",
+    "valueProposition": "Du grès émaillé portugais, pensé pour l'usage quotidien.",
+    "taglines": [
+      "La table qui tient",
+      "Beau, et lavable",
+      "Le grès du quotidien"
+    ],
+    "differentiators": [
+      "Fabrication portugaise tracée",
+      "Compatible lave-vaisselle",
+      "Séries limitées"
+    ],
+    "competitiveAngle": "Là où les concurrents vendent du décoratif, on vend de l'usage.",
+    "proofPoints": [
+      "Atelier nommé",
+      "Garantie 5 ans"
+    ]
+  },
+  "voice": {
+    "toneAttributes": [
+      "Direct",
+      "Concret",
+      "Chaleureux"
+    ],
+    "description": "On parle d'usage, pas de storytelling.",
+    "dos": [
+      "Nommer la matière",
+      "Donner le prix",
+      "Montrer l'objet en service"
+    ],
+    "donts": [
+      "Parler d'authenticité",
+      "Abuser du mot artisanal",
+      "Promettre l'exception"
+    ],
+    "sampleHeadline": "Douze couverts. Zéro précaution.",
+    "sampleBodyCopy": "Le grès émaillé supporte le lave-vaisselle, le four et les invités."
+  },
+  "palette": {
+    "rationale": "Une terre cuite tenue par une encre profonde.",
+    "colors": [
+      {
+        "name": "Terre",
+        "hex": "#A51C30",
+        "role": "principale",
+        "usage": "Accents et boutons",
+        "contrastNote": "7,1:1 sur crème"
+      },
+      {
+        "name": "Crème",
+        "hex": "#FFF6EC",
+        "role": "fond",
+        "usage": "Fond de page",
+        "contrastNote": "Fond de référence"
+      },
+      {
+        "name": "Encre",
+        "hex": "#161A1D",
+        "role": "texte",
+        "usage": "Titres et corps",
+        "contrastNote": "16,4:1 sur crème"
+      },
+      {
+        "name": "Sable",
+        "hex": "#D8C3A5",
+        "role": "secondaire",
+        "usage": "Séparateurs",
+        "contrastNote": "1,4:1 sur crème"
+      }
+    ]
+  },
+  "typography": {
+    "rationale": "Une serif pour la marque, une grotesque pour l'usage.",
+    "pairing": [
+      {
+        "role": "logo",
+        "family": "Sentient",
+        "fallback": "Georgia, serif",
+        "weights": [
+          "400"
+        ],
+        "sizeGuidance": "32-64px",
+        "rationale": "Une serif contemporaine.",
+        "source": "Fontshare"
+      },
+      {
+        "role": "titres",
+        "family": "Switzer",
+        "fallback": "system-ui, sans-serif",
+        "weights": [
+          "700"
+        ],
+        "sizeGuidance": "40-96px",
+        "rationale": "Une grotesque dense.",
+        "source": "Fontshare"
+      },
+      {
+        "role": "courants",
+        "family": "Satoshi",
+        "fallback": "system-ui, sans-serif",
+        "weights": [
+          "400",
+          "700"
+        ],
+        "sizeGuidance": "16-18px",
+        "rationale": "Très lisible en petit corps.",
+        "source": "Fontshare"
+      }
+    ]
+  },
+  "logo": {
+    "concept": "Un wordmark serif avec un V accentué.",
+    "construction": "Grille de 8, hauteur d'x à 60% du cadratin.",
+    "wordmarkSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 80\"><script>alert(1)</script><text x=\"0\" y=\"55\" font-family=\"Sentient, serif\" font-size=\"48\" fill=\"#161A1D\">Vermeil</text></svg>",
+    "monogramSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"50\" r=\"46\" fill=\"#A51C30\" onclick=\"alert(1)\"/><text x=\"50\" y=\"66\" text-anchor=\"middle\" font-size=\"44\" fill=\"#FFF6EC\">V</text></svg>",
+    "clearSpace": "Une hauteur de V sur tous les côtés.",
+    "misuse": [
+      "Ne pas étirer",
+      "Ne pas poser sur photo chargée"
+    ]
+  },
+  "moodboard": {
+    "keywords": [
+      "Grès",
+      "Lumière rasante",
+      "Table dressée",
+      "Matière",
+      "Portugal"
+    ],
+    "imageryDirection": "Lumière naturelle latérale, objets en service.",
+    "textureAndMaterials": "Grès mat, lin lavé, bois brut.",
+    "references": [
+      "Les tables de Vincent Van Duysen",
+      "Les céramiques de Jars"
+    ]
+  },
+  "applications": [
+    {
+      "surface": "Site e-commerce",
+      "direction": "Fiches produit en pleine largeur."
+    },
+    {
+      "surface": "Packaging",
+      "direction": "Carton brut, tampon une couleur."
+    },
+    {
+      "surface": "Instagram",
+      "direction": "Objets en usage, jamais en studio blanc."
+    }
+  ],
+  "nextSteps": [
+    "Faire tester les trois accroches auprès de dix clientes.",
+    "Commander un jeu d'échantillons de grès.",
+    "Décliner les tokens CSS dans le thème Shopify."
+  ]
+}
