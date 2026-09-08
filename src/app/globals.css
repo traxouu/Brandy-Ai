@@ -22,6 +22,8 @@
   --color-ink-muted: #5f676d;    /* légendes, métadonnées              */
 
   --font-logo: "Sentient", ui-serif, Georgia, serif;
+  /* Piste à l'essai pour le logo — bascule : pointer --font-logo ici. */
+  --font-zodiak: "Zodiak", ui-serif, Georgia, serif;
   --font-display: "Switzer", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Satoshi", ui-sans-serif, system-ui, sans-serif;
 
@@ -61,6 +63,10 @@ h4 {
 
 .font-logo {
   font-family: var(--font-logo);
+}
+
+.font-zodiak {
+  font-family: var(--font-zodiak);
 }
 
 /* Grain léger façon papier, pour réchauffer le crème */

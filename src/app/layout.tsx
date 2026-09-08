@@ -27,7 +27,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://api.fontshare.com" />
         <link
-          href="https://api.fontshare.com/v2/css?f[]=sentient@400,500,700&f[]=switzer@400,500,700,800&f[]=satoshi@400,500,700,900&display=swap"
+          href="https://api.fontshare.com/v2/css?f[]=sentient@400,500,700&f[]=switzer@400,500,700,800&f[]=satoshi@400,500,700,900&f[]=zodiak@400&display=swap"
           rel="stylesheet"
         />
       </head>
