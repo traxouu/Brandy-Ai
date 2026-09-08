@@ -61,7 +61,7 @@ export default function PlanCard({ plan, currentPlan, authenticated }: Props) {
       }`}
     >
       {plan.highlight && (
-        <span className="mb-3 self-start rounded-full bg-[var(--color-rouge-fonce)] px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-[var(--color-ivoire)]">
+        <span className="mb-3 self-start rounded-full bg-[var(--color-violet)] px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-[var(--color-ivoire)]">
           Le plus choisi
         </span>
       )}
@@ -81,11 +81,7 @@ export default function PlanCard({ plan, currentPlan, authenticated }: Props) {
       <ul className="mt-6 flex-1 space-y-2.5 text-sm text-[var(--color-encre-douce)]">
         {plan.features.map((feature) => (
           <li key={feature} className="flex gap-2.5">
-            <span
-              className={`mt-[0.35em] block h-1.5 w-1.5 shrink-0 rounded-full ${
-                plan.highlight ? "bg-[var(--color-rouge)]" : "bg-[var(--color-violet)]"
-              }`}
-            />
+            <span className="mt-[0.35em] block h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-violet)]" />
             {feature}
           </li>
         ))}

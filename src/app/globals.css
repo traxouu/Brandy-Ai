@@ -16,10 +16,10 @@
   --color-violet-fonce: #460f7b;   /* survol des boutons            */
   --color-violet-clair: #a267db;   /* violet lisible sur fond sombre */
   --color-violet-voile: #ede6f5;   /* badges, surfaces choisies      */
-  /* Le rouge #e6373c est un ton moyen : il ne tient pas le petit texte.
-     Règle — --color-rouge pour les formes pleines et les grands chiffres
-     (2,95:1 sur ivoire-creuse : à éviter là), --color-rouge-fonce dès qu'un
-     petit texte est en jeu, en couleur comme en fond. Jamais sur le violet. */
+  /* Le rouge est la couleur de l'action. Il ne sert qu'à deux choses :
+     les appels à l'action, et les mots mis en force dans un grand titre.
+     Partout ailleurs c'est le violet. Jamais de rouge sur du violet (2,47:1).
+     --color-rouge-fonce ne sert plus qu'au survol des boutons. */
   --color-rouge-fonce: #c8191e;     /* le rouge quand il faut écrire  */
   --color-rouge-voile: #f8e2e3;     /* fond des erreurs               */
   --color-ivoire-creuse: #e2d6c7; /* fond secondaire, jauges        */
@@ -147,13 +147,32 @@ h4 {
   cursor: not-allowed;
 }
 
+/* Le rouge est la couleur de l'action : il ne sert qu'aux appels à l'action
+   et aux mots mis en force. Texte en blanc pur — sur ton rouge il monte à
+   4,22:1 contre 3,28:1 en ivoire. Le survol descend sur le rouge foncé. */
 .btn-primary {
-  background-color: var(--color-violet);
-  color: var(--color-ivoire);
+  background-color: var(--color-rouge);
+  color: #ffffff;
 }
 
 .btn-primary:hover:not(:disabled) {
-  background-color: var(--color-violet-fonce);
+  background-color: var(--color-rouge-fonce);
+}
+
+/* Sur aplat violet, le rouge tombe à 2,47:1 : le bouton s'y inverse. */
+.btn-on-violet {
+  background-color: var(--color-ivoire);
+  color: var(--color-violet);
+}
+
+.btn-on-violet:hover:not(:disabled) {
+  background-color: #ffffff;
+}
+
+/* Un mot mis en force dans un titre. Grand corps uniquement : 3,28:1 sur
+   ivoire suffit au-delà de 24 px, pas en dessous. */
+.strong {
+  color: var(--color-rouge);
 }
 
 .btn-ink {
