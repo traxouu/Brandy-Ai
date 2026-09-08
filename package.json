@@ -1,0 +1,38 @@
+{
+  "name": "brandy-ai",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "prisma generate && next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run typecheck && npm run test:svg && npm run test:ai",
+    "test:svg": "tsx scripts/test-svg.mts",
+    "test:ai": "tsx --conditions=react-server scripts/test-generation.mts && tsx --conditions=react-server scripts/test-refine.mts",
+    "db:push": "prisma db push",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.124.0",
+    "@prisma/client": "^6.19.0",
+    "bcryptjs": "^3.0.2",
+    "jose": "^6.1.0",
+    "next": "15.5.4",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "server-only": "^0.0.1",
+    "stripe": "^19.1.0",
+    "zod": "^4.5.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.14",
+    "@types/node": "^22.18.0",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "prisma": "^6.19.0",
+    "tailwindcss": "^4.1.14",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.2"
+  }
+}
