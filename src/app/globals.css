@@ -54,7 +54,6 @@ body {
 h1 {
   font-family: var(--font-display);
   font-weight: 600;
-  font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.02;
 }
@@ -76,7 +75,7 @@ h4 {
 
 
 
-/* Grain léger façon papier, pour réchauffer le crème */
+/* Grain léger façon papier, pour réchauffer l'ivoire */
 .paper::before {
   content: "";
   position: fixed;
@@ -110,7 +109,7 @@ h4 {
 .field:focus {
   outline: none;
   border-color: var(--color-violet);
-  box-shadow: 0 0 0 3px rgba(165, 28, 48, 0.12);
+  box-shadow: 0 0 0 3px rgba(89, 24, 153, 0.16);
 }
 
 .label {
